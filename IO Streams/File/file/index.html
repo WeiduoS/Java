@@ -609,41 +609,44 @@ File(String name)
 <ul>
 <li>File Path</li>
 </ul>
-<div class="codehilite"><pre><span></span>pathSeparator
-separator
+<div class="codehilite"><pre><span></span>File.separator: Platform dependent default name-separator character as String. For windows,          it’s ‘\’ and for unix it’s ‘/’.
+File.separatorChar: Same as separator but it’s char.
+File.pathSeparator: Platform dependent variable for path-separator. For example PATH or              CLASSPATH variable list of paths separated by ‘:’ in Unix systems and ‘;’ in Windows           system.
+File.pathSeparatorChar: Same as pathSeparator but it’s char.
+
 getName()
-  - getPath()
-  - getAbsolutePath()
-  - getParent()
+getPath()
+getAbsolutePath()
+getParent()
 </pre></div>
 
 
 <ul>
 <li>File Status</li>
 </ul>
-<div class="codehilite"><pre><span></span>  - exists()
-  - isFile()
-  - isDirectory()
-  - length()
+<div class="codehilite"><pre><span></span>exists()
+isFile()
+isDirectory()
+length()
 </pre></div>
 
 
 <ul>
 <li>Create File</li>
 </ul>
-<div class="codehilite"><pre><span></span>  - createNewFile()
-  - delete()
-  - mkdir()
-  - mkdirs()
+<div class="codehilite"><pre><span></span>createNewFile()
+delete()
+mkdir()
+mkdirs()
 </pre></div>
 
 
 <ul>
 <li>List File</li>
 </ul>
-<div class="codehilite"><pre><span></span>  - list()
-  - listFiles()
-  - listRoots()
+<div class="codehilite"><pre><span></span>list()
+listFiles()
+listRoots()
 </pre></div>
 
 
