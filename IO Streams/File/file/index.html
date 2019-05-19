@@ -330,39 +330,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" title="Getting Started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
     API
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-path" title="File Path" class="md-nav__link">
+    File Path
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing" title="Installing" class="md-nav__link">
-    Installing
+  <a href="#file-status" title="File Status" class="md-nav__link">
+    File Status
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-the-tests" title="Running the tests" class="md-nav__link">
-    Running the tests
+          <li class="md-nav__item">
+  <a href="#create-file" title="Create File" class="md-nav__link">
+    Create File
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
@@ -469,39 +463,33 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#getting-started" title="Getting Started" class="md-nav__link">
-    Getting Started
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#api" title="API" class="md-nav__link">
     API
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#file-path" title="File Path" class="md-nav__link">
+    File Path
+  </a>
+  
 </li>
         
           <li class="md-nav__item">
-  <a href="#installing" title="Installing" class="md-nav__link">
-    Installing
+  <a href="#file-status" title="File Status" class="md-nav__link">
+    File Status
   </a>
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#running-the-tests" title="Running the tests" class="md-nav__link">
-    Running the tests
+          <li class="md-nav__item">
+  <a href="#create-file" title="Create File" class="md-nav__link">
+    Create File
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
@@ -593,10 +581,7 @@
                 <h1 id="file">File<a class="headerlink" href="#file" title="Permanent link">&para;</a></h1>
 <p>The File class from the java.io package, allows us to work with files.</p>
 <p>To use the File class, create an object of the class, and specify the filename or directory name</p>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
-<p>The File class from the java.io package, allows us to work with files.</p>
-<p>To use the File class, create an object of the class, and specify the filename or directory name</p>
-<h3 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<h2 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Contructors</li>
 </ul>
@@ -609,15 +594,15 @@ File(String name)
 <ul>
 <li>File Path</li>
 </ul>
-<div class="codehilite"><pre><span></span>File.separator: Platform dependent default name-separator character as String. For windows,          it’s ‘\’ and for unix it’s ‘/’.
+<div class="codehilite"><pre><span></span>File.separator: Platform dependent default name-separator character as String. For windows, it’s ‘\’ and for unix it’s ‘/’.
 File.separatorChar: Same as separator but it’s char.
-File.pathSeparator: Platform dependent variable for path-separator. For example PATH or              CLASSPATH variable list of paths separated by ‘:’ in Unix systems and ‘;’ in Windows           system.
+File.pathSeparator: Platform dependent variable for path-separator. For example PATH or CLASSPATH variable list of paths separated by ‘:’ in Unix systems and ‘;’ in Windows system.
 File.pathSeparatorChar: Same as pathSeparator but it’s char.
 
-getName()
-getPath()
-getAbsolutePath()
-getParent()
+getName(): Returns the name of the file or directory denoted by this abstract pathname.
+getPath(): Converts this abstract pathname into a pathname string.
+getAbsolutePath(): Returns the absolute pathname string of this abstract pathname.
+getParent(): Returns the pathname string of this abstract pathname&#39;s parent, or null if this pathname does not name a parent directory.
 </pre></div>
 
 
@@ -650,21 +635,75 @@ listRoots()
 </pre></div>
 
 
-<h3 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">&para;</a></h3>
-<p>A step by step series of examples that tell you how to get a development env running</p>
-<p>Say what the step will be</p>
-<div class="codehilite"><pre><span></span>Give the example
+<h3 id="file-path">File Path<a class="headerlink" href="#file-path" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;D:\\java\\IO\\IO.png&quot;</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">File</span><span class="o">.</span><span class="na">separator</span><span class="o">);</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;D:/java/IO/IO.png&quot;</span><span class="o">;</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;D:&quot;</span> <span class="o">+</span> <span class="n">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span><span class="s">&quot;java&quot;</span> <span class="o">+</span> <span class="n">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">&quot;IO &quot;</span> <span class="o">+</span> <span class="n">File</span><span class="o">.</span><span class="na">separator</span> <span class="o">+</span> <span class="s">&quot;IO.png&quot;</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+
+        <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;src/images/ball.png&quot;</span><span class="o">;</span>
+
+        <span class="n">File</span> <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">&quot;user.dir&quot;</span><span class="o">));</span>
+
+        <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;src/images/&quot;</span><span class="o">,</span> <span class="s">&quot;ball.png&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+
+        <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;src/images/&quot;</span><span class="o">),</span> <span class="s">&quot;ball.png&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;name: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;path: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">getPath</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;absolute path: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;parent path: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">getParent</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<p>And repeat</p>
-<div class="codehilite"><pre><span></span>until finished
+<h3 id="file-status">File Status<a class="headerlink" href="#file-status" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;src/images/ball.png&quot;</span><span class="o">;</span>
+
+        <span class="n">File</span> <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;exist: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">exists</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;is file: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">isFile</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;is directory: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<p>End with an example of getting some data out of the system or using it for a little demo</p>
-<h2 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h2>
-<p>Explain how to run the automated tests for this system</p>
+<h3 id="create-file">Create File<a class="headerlink" href="#create-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">path</span> <span class="o">=</span> <span class="s">&quot;src/images/ball.png&quot;</span><span class="o">;</span>
+
+        <span class="n">File</span> <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">path</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;exist: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">exists</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;is file: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">isFile</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;is directory: &quot;</span> <span class="o">+</span> <span class="n">src</span><span class="o">.</span><span class="na">isDirectory</span><span class="o">());</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
 <h3 id="break-down-into-end-to-end-tests">Break down into end to end tests<a class="headerlink" href="#break-down-into-end-to-end-tests" title="Permanent link">&para;</a></h3>
 <p>Explain what these tests test and why</p>
 <div class="codehilite"><pre><span></span>Give an example
