@@ -359,49 +359,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
-    Break down into end to end tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#and-coding-style-tests" title="And coding style tests" class="md-nav__link">
-    And coding style tests
+  <a href="#list-file" title="List File" class="md-nav__link">
+    List File
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#built-with" title="Built With" class="md-nav__link">
-    Built With
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributing" title="Contributing" class="md-nav__link">
-    Contributing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" title="Versioning" class="md-nav__link">
-    Versioning
-  </a>
   
 </li>
       
@@ -492,49 +457,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
-    Break down into end to end tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#and-coding-style-tests" title="And coding style tests" class="md-nav__link">
-    And coding style tests
+  <a href="#list-file" title="List File" class="md-nav__link">
+    List File
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#built-with" title="Built With" class="md-nav__link">
-    Built With
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributing" title="Contributing" class="md-nav__link">
-    Contributing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" title="Versioning" class="md-nav__link">
-    Versioning
-  </a>
   
 </li>
       
@@ -629,9 +559,9 @@ mkdirs(): Creates the directory named by this abstract pathname, including any n
 <ul>
 <li>List File</li>
 </ul>
-<div class="codehilite"><pre><span></span>list()
-listFiles()
-listRoots()
+<div class="codehilite"><pre><span></span>list(): Returns an array of strings naming the files and directories in the directory denoted by this abstract pathname.
+listFiles(): Returns an array of abstract pathnames denoting the files in the directory denoted by this abstract pathname.
+listRoots(): List the available filesystem roots.
 </pre></div>
 
 
@@ -709,30 +639,47 @@ listRoots()
 </pre></div>
 
 
-<h3 id="break-down-into-end-to-end-tests">Break down into end to end tests<a class="headerlink" href="#break-down-into-end-to-end-tests" title="Permanent link">&para;</a></h3>
-<p>Explain what these tests test and why</p>
-<div class="codehilite"><pre><span></span>Give an example
+<h3 id="list-file">List File<a class="headerlink" href="#list-file" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FileDemo</span> <span class="o">{</span>
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&quot;src&quot;</span><span class="o">);</span>
+
+        <span class="n">String</span><span class="o">[]</span> <span class="n">subList</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="na">list</span><span class="o">();</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">:</span> <span class="n">subList</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;s: &quot;</span> <span class="o">+</span> <span class="n">s</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="n">File</span><span class="o">[]</span> <span class="n">subFile</span> <span class="o">=</span> <span class="n">dir</span><span class="o">.</span><span class="na">listFiles</span><span class="o">();</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">subFile</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">());</span>
+        <span class="o">}</span>
+
+        <span class="n">File</span><span class="o">[]</span> <span class="n">roots</span> <span class="o">=</span> <span class="n">File</span><span class="o">.</span><span class="na">listRoots</span><span class="o">();</span>
+
+        <span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">roots</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">getAbsolutePath</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">count</span><span class="o">(</span><span class="n">src</span><span class="o">));</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">count</span><span class="o">(</span><span class="n">File</span> <span class="n">src</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span><span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">src</span> <span class="o">||</span> <span class="o">!</span><span class="n">src</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">isFile</span><span class="o">())</span> <span class="o">{</span>
+            <span class="n">len</span> <span class="o">+=</span> <span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">src</span><span class="o">.</span><span class="na">listFiles</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">count</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">len</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<h3 id="and-coding-style-tests">And coding style tests<a class="headerlink" href="#and-coding-style-tests" title="Permanent link">&para;</a></h3>
-<p>Explain what these tests test and why</p>
-<div class="codehilite"><pre><span></span>Give an example
-</pre></div>
-
-
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>Add additional notes about how to deploy this on a live system</p>
-<h2 id="built-with">Built With<a class="headerlink" href="#built-with" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="http://www.dropwizard.io/1.0.2/docs/">Dropwizard</a> - The web framework used</li>
-<li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
-<li><a href="https://rometools.github.io/rome/">ROME</a> - Used to generate RSS Feeds</li>
-</ul>
-<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
-<p>Please read <a href="https://gist.github.com/PurpleBooth/b24679402957c63ec426">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
-<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/your/project/tags">tags on this repository</a>.</p>
 <h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Billie Thompson</strong> - <em>Initial work</em> - <a href="https://github.com/PurpleBooth">PurpleBooth</a></li>
