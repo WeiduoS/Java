@@ -667,11 +667,11 @@ listRoots(): List the available filesystem roots.
     <span class="o">}</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">count</span><span class="o">(</span><span class="n">File</span> <span class="n">src</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">if</span><span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">src</span> <span class="o">||</span> <span class="o">!</span><span class="n">src</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="k">return</span> <span class="mi">0</span><span class="o">;</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">src</span><span class="o">.</span><span class="na">isFile</span><span class="o">())</span> <span class="o">{</span>
-            <span class="n">len</span> <span class="o">+=</span> <span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
-            <span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">src</span><span class="o">.</span><span class="na">listFiles</span><span class="o">())</span> <span class="o">{</span>
-                <span class="n">count</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="n">File</span> <span class="n">f</span> <span class="o">:</span> <span class="n">src</span><span class="o">.</span><span class="na">listFiles</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="na">isFile</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">len</span> <span class="o">+=</span> <span class="n">f</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">len</span> <span class="o">+=</span> <span class="n">count</span><span class="o">(</span><span class="n">f</span><span class="o">);</span>
             <span class="o">}</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="n">len</span><span class="o">;</span>
