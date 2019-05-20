@@ -360,72 +360,25 @@
     Character Streams
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing" title="Installing" class="md-nav__link">
-    Installing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-the-tests" title="Running the tests" class="md-nav__link">
-    Running the tests
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
-    Break down into end to end tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#and-coding-style-tests" title="And coding style tests" class="md-nav__link">
-    And coding style tests
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
+  <a href="#byte-array-input" title="Byte Array input" class="md-nav__link">
+    Byte Array input
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#built-with" title="Built With" class="md-nav__link">
-    Built With
+  <a href="#byte-array-stream" title="Byte Array Stream" class="md-nav__link">
+    Byte Array Stream
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" title="Contributing" class="md-nav__link">
-    Contributing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" title="Versioning" class="md-nav__link">
-    Versioning
+  <a href="#buffer-stream" title="Buffer Stream" class="md-nav__link">
+    Buffer Stream
   </a>
   
 </li>
@@ -440,13 +393,6 @@
         <li class="md-nav__item">
   <a href="#license" title="License" class="md-nav__link">
     License
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
-    Acknowledgments
   </a>
   
 </li>
@@ -506,72 +452,25 @@
     Character Streams
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installing" title="Installing" class="md-nav__link">
-    Installing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-the-tests" title="Running the tests" class="md-nav__link">
-    Running the tests
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#break-down-into-end-to-end-tests" title="Break down into end to end tests" class="md-nav__link">
-    Break down into end to end tests
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#and-coding-style-tests" title="And coding style tests" class="md-nav__link">
-    And coding style tests
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment" title="Deployment" class="md-nav__link">
-    Deployment
+  <a href="#byte-array-input" title="Byte Array input" class="md-nav__link">
+    Byte Array input
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#built-with" title="Built With" class="md-nav__link">
-    Built With
+  <a href="#byte-array-stream" title="Byte Array Stream" class="md-nav__link">
+    Byte Array Stream
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributing" title="Contributing" class="md-nav__link">
-    Contributing
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#versioning" title="Versioning" class="md-nav__link">
-    Versioning
+  <a href="#buffer-stream" title="Buffer Stream" class="md-nav__link">
+    Buffer Stream
   </a>
   
 </li>
@@ -586,13 +485,6 @@
         <li class="md-nav__item">
   <a href="#license" title="License" class="md-nav__link">
     License
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acknowledgments" title="Acknowledgments" class="md-nav__link">
-    Acknowledgments
   </a>
   
 </li>
@@ -618,7 +510,25 @@
                 
                 <h1 id="java-io">Java I/O<a class="headerlink" href="#java-io" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>
+<ul>
+<li>InputStream: Abstract class</li>
+</ul>
+<div class="codehilite"><pre><span></span>ByteArrayInputStream、StringBufferInputStream(StreamBufferInputStream)、FileInputStream: read from Byte array,StringBuffer and local file
+
+PipedInputStream: read from multiple shared threads
+
+ObjectInputStream: FilterInputStream&#39;s sub class
+</pre></div>
+
+
+<ul>
+<li>OutputStream: Abstract class</li>
+</ul>
+<div class="codehilite"><pre><span></span>ByteArrayOutputStream、FileOutputStream: write into Byte array,StringBuffer and local file
+
+PipedInputStream: write into multiple shared threads
+
+ObjectOutputStream: FilterInputStream&#39;s sub class
 </pre></div>
 
 
@@ -716,58 +626,163 @@
 </pre></div>
 
 
-<h3 id="installing">Installing<a class="headerlink" href="#installing" title="Permanent link">&para;</a></h3>
-<p>A step by step series of examples that tell you how to get a development env running</p>
-<p>Say what the step will be</p>
-<div class="codehilite"><pre><span></span>Give the example
+<h2 id="byte-array-input">Byte Array input<a class="headerlink" href="#byte-array-input" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IODemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">src</span> <span class="o">=</span> <span class="s">&quot;hello world!&quot;</span><span class="o">.</span><span class="na">getBytes</span><span class="o">();</span>
+        <span class="n">InputStream</span> <span class="n">in</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">src</span><span class="o">);</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">5</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">len</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">read</span><span class="o">())</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">String</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">in</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<p>And repeat</p>
-<div class="codehilite"><pre><span></span>until finished
+<h2 id="byte-array-stream">Byte Array Stream<a class="headerlink" href="#byte-array-stream" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.ByteArrayInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IODemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">datas</span> <span class="o">=</span> <span class="n">fileToByteArray</span><span class="o">(</span><span class="s">&quot;src/images/p.png&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">datas</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+        <span class="n">byteArrayToFile</span><span class="o">(</span><span class="n">datas</span><span class="o">,</span><span class="s">&quot;src/images/p-byte.png&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">byte</span><span class="o">[]</span> <span class="nf">fileToByteArray</span><span class="o">(</span><span class="n">String</span> <span class="n">filePath</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">File</span> <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filePath</span><span class="o">);</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">dest</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">InputStream</span>  <span class="n">is</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">ByteArrayOutputStream</span> <span class="n">baos</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">src</span><span class="o">);</span>
+            <span class="n">baos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayOutputStream</span><span class="o">();</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">baos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">baos</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+            <span class="n">dest</span> <span class="o">=</span> <span class="n">baos</span><span class="o">.</span><span class="na">toByteArray</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">dest</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">byteArrayToFile</span><span class="o">(</span><span class="kt">byte</span><span class="o">[]</span> <span class="n">src</span><span class="o">,</span> <span class="n">String</span> <span class="n">filePath</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">File</span> <span class="n">dest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">filePath</span><span class="o">);</span>
+        <span class="n">InputStream</span>  <span class="n">is</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">src</span><span class="o">);</span>
+            <span class="n">os</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">dest</span><span class="o">);</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">os</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">os</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="k">if</span><span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">os</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">try</span> <span class="o">{</span>
+                    <span class="n">os</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<p>End with an example of getting some data out of the system or using it for a little demo</p>
-<h2 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permanent link">&para;</a></h2>
-<p>Explain how to run the automated tests for this system</p>
-<h3 id="break-down-into-end-to-end-tests">Break down into end to end tests<a class="headerlink" href="#break-down-into-end-to-end-tests" title="Permanent link">&para;</a></h3>
-<p>Explain what these tests test and why</p>
-<div class="codehilite"><pre><span></span>Give an example
+<h2 id="buffer-stream">Buffer Stream<a class="headerlink" href="#buffer-stream" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileNotFoundException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IODemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">t1</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+        <span class="n">copy</span><span class="o">(</span><span class="s">&quot;src/images/IO.mp4&quot;</span><span class="o">,</span><span class="s">&quot;src/images/IO-copy.mp4&quot;</span><span class="o">);</span>
+        <span class="kt">long</span> <span class="n">t2</span> <span class="o">=</span> <span class="n">System</span><span class="o">.</span><span class="na">currentTimeMillis</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t2</span> <span class="o">-</span> <span class="n">t1</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">copy</span><span class="o">(</span><span class="n">String</span> <span class="n">srcPath</span><span class="o">,</span><span class="n">String</span> <span class="n">destPath</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//1、创建源</span>
+        <span class="n">File</span> <span class="n">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">srcPath</span><span class="o">);</span> <span class="c1">//源头</span>
+        <span class="n">File</span> <span class="n">dest</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">destPath</span><span class="o">);</span><span class="c1">//目的地</span>
+        <span class="c1">//2、选择流</span>
+        <span class="k">try</span><span class="o">(</span> <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">src</span><span class="o">));</span>
+                <span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedOutputStream</span><span class="o">(</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">dest</span><span class="o">));)</span> <span class="o">{</span>
+            <span class="c1">//3、操作 (分段读取)</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span> <span class="c1">//缓冲容器</span>
+            <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))!</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">os</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="n">len</span><span class="o">);</span> <span class="c1">//分段写出</span>
+            <span class="o">}</span>
+            <span class="n">os</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
 
 
-<h3 id="and-coding-style-tests">And coding style tests<a class="headerlink" href="#and-coding-style-tests" title="Permanent link">&para;</a></h3>
-<p>Explain what these tests test and why</p>
-<div class="codehilite"><pre><span></span>Give an example
-</pre></div>
-
-
-<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
-<p>Add additional notes about how to deploy this on a live system</p>
-<h2 id="built-with">Built With<a class="headerlink" href="#built-with" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="http://www.dropwizard.io/1.0.2/docs/">Dropwizard</a> - The web framework used</li>
-<li><a href="https://maven.apache.org/">Maven</a> - Dependency Management</li>
-<li><a href="https://rometools.github.io/rome/">ROME</a> - Used to generate RSS Feeds</li>
-</ul>
-<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
-<p>Please read <a href="https://gist.github.com/PurpleBooth/b24679402957c63ec426">CONTRIBUTING.md</a> for details on our code of conduct, and the process for submitting pull requests to us.</p>
-<h2 id="versioning">Versioning<a class="headerlink" href="#versioning" title="Permanent link">&para;</a></h2>
-<p>We use <a href="http://semver.org/">SemVer</a> for versioning. For the versions available, see the <a href="https://github.com/your/project/tags">tags on this repository</a>.</p>
 <h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Billie Thompson</strong> - <em>Initial work</em> - <a href="https://github.com/PurpleBooth">PurpleBooth</a></li>
+<li><strong>Weiduo Sun</strong> -</li>
 </ul>
-<p>See also the list of <a href="https://github.com/your/project/contributors">contributors</a> who participated in this project.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
-<p>This project is licensed under the MIT License - see the <a href="LICENSE.md">LICENSE.md</a> file for details</p>
-<h2 id="acknowledgments">Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Hat tip to anyone whose code was used</li>
-<li>Inspiration</li>
-<li>etc</li>
-</ul>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/WeiduoS/Java/blob/master/LICENSE">LICENSE.md</a> file for details</p>
                 
                   
                 
