@@ -384,6 +384,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#object-stream" title="Object Stream" class="md-nav__link">
+    Object Stream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-access" title="Random Access" class="md-nav__link">
+    Random Access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#authors" title="Authors" class="md-nav__link">
     Authors
   </a>
@@ -471,6 +485,20 @@
         <li class="md-nav__item">
   <a href="#buffer-stream" title="Buffer Stream" class="md-nav__link">
     Buffer Stream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-stream" title="Object Stream" class="md-nav__link">
+    Object Stream
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#random-access" title="Random Access" class="md-nav__link">
+    Random Access
   </a>
   
 </li>
@@ -772,6 +800,223 @@ ObjectOutputStream: FilterInputStream&#39;s sub class
         <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
             <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
         <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="object-stream">Object Stream<a class="headerlink" href="#object-stream" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileNotFoundException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ObjectInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ObjectOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">IODemo</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">FileNotFoundException</span><span class="o">,</span> <span class="n">IOException</span><span class="o">,</span> <span class="n">ClassNotFoundException</span> <span class="o">{</span>
+        <span class="c1">// 写出 --&gt;序列化</span>
+        <span class="n">ObjectOutputStream</span> <span class="n">oos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectOutputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">BufferedOutputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&quot;src/images/obj.ser&quot;</span><span class="o">)));</span>
+        <span class="c1">// 操作数据类型 +数据</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeUTF</span><span class="o">(</span><span class="s">&quot;coding&quot;</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeInt</span><span class="o">(</span><span class="mi">18</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeBoolean</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeChar</span><span class="o">(</span><span class="sc">&#39;a&#39;</span><span class="o">);</span>
+        <span class="c1">// 对象</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="s">&quot;string&quot;</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+        <span class="n">Employee</span> <span class="n">emp</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Employee</span><span class="o">(</span><span class="s">&quot;Jim&quot;</span><span class="o">,</span> <span class="mi">400</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">emp</span><span class="o">);</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+        <span class="n">oos</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="c1">// 读取 --&gt;反序列化</span>
+        <span class="n">ObjectInputStream</span> <span class="n">ois</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="s">&quot;obj.ser&quot;</span><span class="o">)));</span>
+        <span class="c1">// 顺序与写出一致</span>
+        <span class="n">String</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readUTF</span><span class="o">();</span>
+        <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readInt</span><span class="o">();</span>
+        <span class="kt">boolean</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readBoolean</span><span class="o">();</span>
+        <span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readChar</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">msg</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">age</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">flag</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">ch</span><span class="o">);</span>
+        <span class="c1">// 对象的数据还原</span>
+        <span class="n">Object</span> <span class="n">str</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+        <span class="n">Object</span> <span class="n">date</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+        <span class="n">Object</span> <span class="n">employee</span> <span class="o">=</span> <span class="n">ois</span><span class="o">.</span><span class="na">readObject</span><span class="o">();</span>
+
+        <span class="k">if</span> <span class="o">(</span><span class="n">str</span> <span class="k">instanceof</span> <span class="n">String</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">strObj</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">str</span><span class="o">;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">strObj</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">date</span> <span class="k">instanceof</span> <span class="n">Date</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Date</span> <span class="n">dateObj</span> <span class="o">=</span> <span class="o">(</span><span class="n">Date</span><span class="o">)</span> <span class="n">date</span><span class="o">;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">dateObj</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">employee</span> <span class="k">instanceof</span> <span class="n">Employee</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Employee</span> <span class="n">empObj</span> <span class="o">=</span> <span class="o">(</span><span class="n">Employee</span><span class="o">)</span> <span class="n">employee</span><span class="o">;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">empObj</span><span class="o">.</span><span class="na">getName</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">empObj</span><span class="o">.</span><span class="na">getSalary</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">ois</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">//Javabean</span>
+<span class="kd">class</span> <span class="nc">Employee</span> <span class="kd">implements</span> <span class="n">java</span><span class="o">.</span><span class="na">io</span><span class="o">.</span><span class="na">Serializable</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">long</span> <span class="n">serialVersionUID</span> <span class="o">=</span> <span class="mi">1208818830691668617L</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">transient</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span> <span class="c1">//该数据不需要序列化</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">Employee</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="kt">double</span> <span class="n">salary</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getSalary</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSalary</span><span class="o">(</span><span class="kt">double</span> <span class="n">salary</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">salary</span> <span class="o">=</span> <span class="n">salary</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="random-access">Random Access<a class="headerlink" href="#random-access" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.RandomAccessFile</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.SequenceInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Vector</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SplitFile</span> <span class="o">{</span>
+    <span class="c1">//源头</span>
+    <span class="kd">private</span> <span class="n">File</span> <span class="n">src</span><span class="o">;</span>
+    <span class="c1">//目的地(文件夹)</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">destDir</span><span class="o">;</span>
+    <span class="c1">//所有分割后的文件存储路径</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">destPaths</span><span class="o">;</span>
+    <span class="c1">//每块大小</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">blockSize</span><span class="o">;</span>
+    <span class="c1">//块数: 多少块</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">size</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">SplitFile</span><span class="o">(</span><span class="n">String</span> <span class="n">srcPath</span><span class="o">,</span><span class="n">String</span> <span class="n">destDir</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(</span><span class="n">srcPath</span><span class="o">,</span><span class="n">destDir</span><span class="o">,</span><span class="mi">1024</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nf">SplitFile</span><span class="o">(</span><span class="n">String</span> <span class="n">srcPath</span><span class="o">,</span><span class="n">String</span> <span class="n">destDir</span><span class="o">,</span><span class="kt">int</span> <span class="n">blockSize</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">src</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">srcPath</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">destDir</span> <span class="o">=</span> <span class="n">destDir</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">blockSize</span> <span class="o">=</span> <span class="n">blockSize</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">destPaths</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+
+        <span class="c1">//初始化</span>
+        <span class="n">init</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">//初始化</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//总长度</span>
+        <span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">src</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+        <span class="c1">//块数: 多少块</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">size</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">ceil</span><span class="o">(</span><span class="n">len</span><span class="o">*</span><span class="mf">1.0</span> <span class="o">/</span> <span class="n">blockSize</span><span class="o">);</span>
+        <span class="c1">//路径</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">destPaths</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">destDir</span> <span class="o">+</span> <span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span><span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="o">.</span><span class="na">src</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="cm">/**</span>
+<span class="cm">     * 分割</span>
+<span class="cm">     * 1、计算每一块的起始位置及大小</span>
+<span class="cm">     * 2、分割</span>
+<span class="cm">     * @throws IOException</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">split</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//总长度</span>
+        <span class="kt">long</span> <span class="n">len</span> <span class="o">=</span> <span class="n">src</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+        <span class="c1">//起始位置和实际大小</span>
+        <span class="kt">int</span> <span class="n">beginPos</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">actualSize</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">blockSize</span> <span class="o">&gt;</span> <span class="n">len</span> <span class="o">?</span> <span class="n">len</span> <span class="o">:</span> <span class="n">blockSize</span><span class="o">);</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">beginPos</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">blockSize</span><span class="o">;</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">//最后一块</span>
+                <span class="n">actualSize</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">len</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">actualSize</span> <span class="o">=</span> <span class="n">blockSize</span><span class="o">;</span>
+                <span class="n">len</span> <span class="o">-=</span> <span class="n">actualSize</span><span class="o">;</span> <span class="c1">//剩余量</span>
+            <span class="o">}</span>
+            <span class="n">splitDetail</span><span class="o">(</span><span class="n">i</span><span class="o">,</span><span class="n">beginPos</span><span class="o">,</span><span class="n">actualSize</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="cm">/**</span>
+<span class="cm">     * 指定第i块的起始位置 和实际长度</span>
+<span class="cm">     * @param i</span>
+<span class="cm">     * @param beginPos</span>
+<span class="cm">     * @param actualSize</span>
+<span class="cm">     * @throws IOException</span>
+<span class="cm">     */</span>
+    <span class="kd">private</span>  <span class="kt">void</span> <span class="nf">splitDetail</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span><span class="kt">int</span> <span class="n">beginPos</span><span class="o">,</span><span class="kt">int</span> <span class="n">actualSize</span> <span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">RandomAccessFile</span> <span class="n">raf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">src</span><span class="o">,</span><span class="s">&quot;r&quot;</span><span class="o">);</span>
+        <span class="n">RandomAccessFile</span> <span class="n">raf2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RandomAccessFile</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">destPaths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">),</span><span class="s">&quot;rw&quot;</span><span class="o">);</span>
+        <span class="c1">//随机读取</span>
+        <span class="n">raf</span><span class="o">.</span><span class="na">seek</span><span class="o">(</span><span class="n">beginPos</span><span class="o">);</span>
+        <span class="c1">//读取</span>
+        <span class="c1">//3、操作 (分段读取)</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span> <span class="c1">//缓冲容器</span>
+        <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span> <span class="c1">//接收长度</span>
+        <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">raf</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">actualSize</span> <span class="o">&gt;</span> <span class="n">len</span><span class="o">)</span> <span class="o">{</span> <span class="c1">//获取本次读取的所有内容</span>
+                <span class="n">raf2</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+                <span class="n">actualSize</span> <span class="o">-=</span> <span class="n">len</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">raf2</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">actualSize</span><span class="o">);</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">raf2</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="n">raf</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="cm">/**</span>
+<span class="cm">     * 文件的合并</span>
+<span class="cm">     * @throws IOException</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">merge</span><span class="o">(</span><span class="n">String</span> <span class="n">destPath</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//输出流</span>
+        <span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedOutputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">destPath</span><span class="o">,</span><span class="kc">true</span><span class="o">));</span>
+        <span class="c1">//输入流</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">destPaths</span><span class="o">.</span><span class="na">size</span><span class="o">();</span><span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedInputStream</span><span class="o">(</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">destPaths</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">)));</span>
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">os</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+            <span class="o">}</span>
+            <span class="n">os</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+            <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="n">os</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="n">SplitFile</span> <span class="n">sf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SplitFile</span><span class="o">(</span><span class="s">&quot;src/main/java/basic/IO/Copy.java&quot;</span><span class="o">,</span><span class="s">&quot;src/images/&quot;</span><span class="o">)</span> <span class="o">;</span>
+        <span class="n">sf</span><span class="o">.</span><span class="na">split</span><span class="o">();</span>
+        <span class="n">sf</span><span class="o">.</span><span class="na">merge</span><span class="o">(</span><span class="s">&quot;src/images/merge01.java&quot;</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </pre></div>
