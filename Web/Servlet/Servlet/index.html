@@ -1,0 +1,1650 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Personal Review">
+      
+      
+        <link rel="canonical" href="https://WeiduoS.github.io/Java/Web/Servlet/Servlet/">
+      
+      
+        <meta name="author" content="Weiduo Sun">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>1 Servelt - Java</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../../manifest.webmanifest">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#java-servelt" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://WeiduoS.github.io/Java/" title="Java" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Java
+            </span>
+            <span class="md-header-nav__topic">
+              1 Servelt
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/WeiduoS/Java/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WeiduoS/Java
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://WeiduoS.github.io/Java/" title="Java" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Java
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/WeiduoS/Java/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    WeiduoS/Java
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Java Stream
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Java Stream
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IO Streams/File/File/" title="1 File" class="md-nav__link">
+      1 File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../IO Streams/IO/IO/" title="2 IO" class="md-nav__link">
+      2 IO
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Java Annotation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Java Annotation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Annotation/Build-in/build_in_annotation/" title="1 Build in Annotation" class="md-nav__link">
+      1 Build in Annotation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Annotation/Custom/Custom_annotation/" title="2 Custome Annotation" class="md-nav__link">
+      2 Custome Annotation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Java Networking
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Java Networking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Networking/Socket/Socket/" title="1 Socket" class="md-nav__link">
+      1 Socket
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Networking/UDP/UDP/" title="2 UDP" class="md-nav__link">
+      2 UDP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Networking/TCP/TCP/" title="3 TCP" class="md-nav__link">
+      3 TCP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Java Web
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Java Web
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        1 Servelt
+      </label>
+    
+    <a href="./" title="1 Servelt" class="md-nav__link md-nav__link--active">
+      1 Servelt
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity" title="Entity" class="md-nav__link">
+    Entity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping" title="Mapping" class="md-nav__link">
+    Mapping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" title="Request" class="md-nav__link">
+    Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" title="Response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server" title="Server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dispatcher" title="Dispatcher" class="md-nav__link">
+    Dispatcher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webapp" title="WebApp" class="md-nav__link">
+    WebApp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhandler" title="WebHandler" class="md-nav__link">
+    WebHandler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webcontext" title="WebContext" class="md-nav__link">
+    WebContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servlet" title="Servlet" class="md-nav__link">
+    Servlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loginservlet" title="LoginServlet" class="md-nav__link">
+    LoginServlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registerservlet" title="RegisterServlet" class="md-nav__link">
+    RegisterServlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-xml" title="Web xml" class="md-nav__link">
+    Web xml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" title="Error" class="md-nav__link">
+    Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" title="Index" class="md-nav__link">
+    Index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login" title="Login" class="md-nav__link">
+    Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regist" title="Regist" class="md-nav__link">
+    Regist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authors" title="Authors" class="md-nav__link">
+    Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entity" title="Entity" class="md-nav__link">
+    Entity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping" title="Mapping" class="md-nav__link">
+    Mapping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#request" title="Request" class="md-nav__link">
+    Request
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#response" title="Response" class="md-nav__link">
+    Response
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server" title="Server" class="md-nav__link">
+    Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dispatcher" title="Dispatcher" class="md-nav__link">
+    Dispatcher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webapp" title="WebApp" class="md-nav__link">
+    WebApp
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhandler" title="WebHandler" class="md-nav__link">
+    WebHandler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webcontext" title="WebContext" class="md-nav__link">
+    WebContext
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#servlet" title="Servlet" class="md-nav__link">
+    Servlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loginservlet" title="LoginServlet" class="md-nav__link">
+    LoginServlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#registerservlet" title="RegisterServlet" class="md-nav__link">
+    RegisterServlet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-xml" title="Web xml" class="md-nav__link">
+    Web xml
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error" title="Error" class="md-nav__link">
+    Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#index" title="Index" class="md-nav__link">
+    Index
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login" title="Login" class="md-nav__link">
+    Login
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regist" title="Regist" class="md-nav__link">
+    Regist
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authors" title="Authors" class="md-nav__link">
+    Authors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license" title="License" class="md-nav__link">
+    License
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/WeiduoS/Java/edit/master/docs/Web/Servlet/Servlet.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="java-servelt">Java Servelt<a class="headerlink" href="#java-servelt" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>
+</pre></div>
+
+
+<h2 id="entity">Entity<a class="headerlink" href="#entity" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Entity</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">clz</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Entity</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// TODO Auto-generated constructor stub</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getClz</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">clz</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setClz</span><span class="o">(</span><span class="n">String</span> <span class="n">clz</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">clz</span> <span class="o">=</span> <span class="n">clz</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="mapping">Mapping<a class="headerlink" href="#mapping" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashSet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Set</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mapping</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">patterns</span> <span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">Mapping</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">patterns</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getPatterns</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">patterns</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPatterns</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">patterns</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">patterns</span> <span class="o">=</span> <span class="n">patterns</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addPattern</span><span class="o">(</span><span class="n">String</span> <span class="n">pattern</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">patterns</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">pattern</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="request">Request<a class="headerlink" href="#request" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.UnsupportedEncodingException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Request</span> <span class="o">{</span>
+    <span class="c1">// 协议消息</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">requestInfo</span><span class="o">;</span>
+    <span class="c1">// 请求方式</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">method</span><span class="o">;</span>
+    <span class="c1">// 请求url</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">url</span><span class="o">;</span>
+    <span class="c1">// 请求参数</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">queryStr</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;&gt;</span> <span class="n">parameterMap</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">CRLF</span> <span class="o">=</span> <span class="s">&quot;\r\n&quot;</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Request</span><span class="o">(</span><span class="n">Socket</span> <span class="n">client</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(</span><span class="n">client</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Request</span><span class="o">(</span><span class="n">InputStream</span> <span class="n">is</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">parameterMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">datas</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">len</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">datas</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">datas</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// 分解字符串</span>
+        <span class="n">parseRequestInfo</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">parseRequestInfo</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;------分解-------&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---1、获取请求方式: 开头到第一个/------&quot;</span><span class="o">);</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">method</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&quot;/&quot;</span><span class="o">)).</span><span class="na">toLowerCase</span><span class="o">();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">method</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">method</span><span class="o">.</span><span class="na">trim</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---2、获取请求url: 第一个/ 到 HTTP/------&quot;</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---可能包含请求参数? 前面的为url------&quot;</span><span class="o">);</span>
+        <span class="c1">// 1)、获取/的位置</span>
+        <span class="kt">int</span> <span class="n">startIdx</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&quot;/&quot;</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="c1">// 2)、获取 HTTP/的位置</span>
+        <span class="kt">int</span> <span class="n">endIdx</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&quot;HTTP/&quot;</span><span class="o">);</span>
+        <span class="c1">// 3)、分割字符串</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">startIdx</span><span class="o">,</span> <span class="n">endIdx</span><span class="o">);</span>
+        <span class="c1">// 4)、获取？的位置</span>
+        <span class="kt">int</span> <span class="n">queryIdx</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">url</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">&quot;?&quot;</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">queryIdx</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 表示存在请求参数</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">urlArray</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">url</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;\\?&quot;</span><span class="o">);</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">url</span> <span class="o">=</span> <span class="n">urlArray</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+            <span class="n">queryStr</span> <span class="o">=</span> <span class="n">urlArray</span><span class="o">[</span><span class="mi">1</span><span class="o">];</span>
+        <span class="o">}</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">url</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;---3、获取请求参数:如果Get已经获取,如果是post可能在请求体中------&quot;</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">method</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;post&quot;</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">qStr</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">requestInfo</span><span class="o">.</span><span class="na">lastIndexOf</span><span class="o">(</span><span class="n">CRLF</span><span class="o">)).</span><span class="na">trim</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">qStr</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">queryStr</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">queryStr</span> <span class="o">=</span> <span class="n">qStr</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">queryStr</span> <span class="o">+=</span> <span class="s">&quot;&amp;&quot;</span> <span class="o">+</span> <span class="n">qStr</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">queryStr</span> <span class="o">=</span> <span class="kc">null</span> <span class="o">==</span> <span class="n">queryStr</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="o">:</span> <span class="n">queryStr</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">method</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">url</span> <span class="o">+</span> <span class="s">&quot;--&gt;&quot;</span> <span class="o">+</span> <span class="n">queryStr</span><span class="o">);</span>
+        <span class="c1">// 转成Map fav=1&amp;fav=2&amp;uname=shsxt&amp;age=18&amp;others=</span>
+        <span class="n">convertMap</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 处理请求参数为Map</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">convertMap</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// 1、分割字符串 &amp;</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">keyValues</span> <span class="o">=</span> <span class="n">queryStr</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;&amp;&quot;</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">query</span> <span class="o">:</span> <span class="n">keyValues</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// 2、再次分割字符串 =</span>
+            <span class="n">String</span><span class="o">[]</span> <span class="n">kv</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&quot;=&quot;</span><span class="o">);</span>
+            <span class="n">kv</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">copyOf</span><span class="o">(</span><span class="n">kv</span><span class="o">,</span> <span class="mi">2</span><span class="o">);</span>
+            <span class="c1">// 获取key和value</span>
+            <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="n">kv</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+            <span class="n">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">kv</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">decode</span><span class="o">(</span><span class="n">kv</span><span class="o">[</span><span class="mi">1</span><span class="o">],</span> <span class="s">&quot;utf-8&quot;</span><span class="o">);</span>
+            <span class="c1">// 存储到map中</span>
+            <span class="k">if</span> <span class="o">(!</span><span class="n">parameterMap</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">key</span><span class="o">))</span> <span class="o">{</span> <span class="c1">// 第一次</span>
+                <span class="n">parameterMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">key</span><span class="o">,</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;());</span>
+            <span class="o">}</span>
+            <span class="n">parameterMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">value</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">decode</span><span class="o">(</span><span class="n">String</span> <span class="n">value</span><span class="o">,</span><span class="n">String</span> <span class="n">enc</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">java</span><span class="o">.</span><span class="na">net</span><span class="o">.</span><span class="na">URLDecoder</span><span class="o">.</span><span class="na">decode</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">enc</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">UnsupportedEncodingException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getParameterValues</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">values</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">parameterMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">values</span> <span class="o">||</span> <span class="n">values</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">values</span><span class="o">.</span><span class="na">toArray</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getParameter</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">values</span> <span class="o">=</span> <span class="n">getParameterValues</span><span class="o">(</span><span class="n">key</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">values</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">values</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">method</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getUrl</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">url</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getQueryStr</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">queryStr</span><span class="o">;</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="response">Response<a class="headerlink" href="#response" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.BufferedWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStreamWriter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Response</span> <span class="o">{</span>
+    <span class="n">BufferedWriter</span> <span class="n">bw</span><span class="o">;</span>
+    <span class="c1">// 正文</span>
+    <span class="kd">private</span> <span class="n">StringBuilder</span> <span class="n">content</span><span class="o">;</span>
+    <span class="c1">// 协议头（状态行与请求头 回车）信息</span>
+    <span class="kd">private</span> <span class="n">StringBuilder</span> <span class="n">headInfo</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">len</span><span class="o">;</span> <span class="c1">// 正文的字节数</span>
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BLANK</span> <span class="o">=</span> <span class="s">&quot; &quot;</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">CRLF</span> <span class="o">=</span> <span class="s">&quot;\r\n&quot;</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="nf">Response</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">headInfo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Response</span><span class="o">(</span><span class="n">Socket</span> <span class="n">client</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">();</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">client</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">()));</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">Response</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">os</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">();</span>
+        <span class="n">bw</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedWriter</span><span class="o">(</span><span class="k">new</span> <span class="n">OutputStreamWriter</span><span class="o">(</span><span class="n">os</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 动态添加内容</span>
+    <span class="kd">public</span> <span class="n">Response</span> <span class="nf">print</span><span class="o">(</span><span class="n">String</span> <span class="n">info</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">content</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">info</span><span class="o">);</span>
+        <span class="n">len</span> <span class="o">+=</span> <span class="n">info</span><span class="o">.</span><span class="na">getBytes</span><span class="o">().</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Response</span> <span class="nf">println</span><span class="o">(</span><span class="n">String</span> <span class="n">info</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">content</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">info</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+        <span class="n">len</span> <span class="o">+=</span> <span class="o">(</span><span class="n">info</span> <span class="o">+</span> <span class="n">CRLF</span><span class="o">).</span><span class="na">getBytes</span><span class="o">().</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">pushToBrowser</span><span class="o">(</span><span class="kt">int</span> <span class="n">code</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">headInfo</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="mi">505</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">createHeadInfo</span><span class="o">(</span><span class="n">code</span><span class="o">);</span>
+        <span class="n">bw</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">headInfo</span><span class="o">);</span>
+        <span class="n">bw</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">content</span><span class="o">);</span>
+        <span class="n">bw</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 构建头信息</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">createHeadInfo</span><span class="o">(</span><span class="kt">int</span> <span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 1、响应行: HTTP/1.1 200 OK</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;HTTP/1.1&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">BLANK</span><span class="o">);</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">code</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">BLANK</span><span class="o">);</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="mi">200</span><span class="o">:</span>
+            <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;OK&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">404</span><span class="o">:</span>
+            <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;NOT FOUND&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="k">case</span> <span class="mi">505</span><span class="o">:</span>
+            <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;SERVER ERROR&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+            <span class="k">break</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Date:&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">()).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Server:&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;wsserver Server/0.0.1;charset=UTF-8&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Content-type:text/html&quot;</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&quot;Content-length:&quot;</span> <span class="o">+</span> <span class="n">len</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+        <span class="n">headInfo</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">CRLF</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="server">Server<a class="headerlink" href="#server" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.ServerSocket</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Server</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">ServerSocket</span> <span class="n">serverSocket</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isRunning</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Server</span> <span class="n">server</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Server</span><span class="o">();</span>
+        <span class="n">server</span><span class="o">.</span><span class="na">start</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 启动服务</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">start</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">serverSocket</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ServerSocket</span><span class="o">(</span><span class="mi">8888</span><span class="o">);</span>
+            <span class="n">isRunning</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="n">receive</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;服务器启动失败....&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 接受连接处理</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">receive</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">isRunning</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">Socket</span> <span class="n">client</span> <span class="o">=</span> <span class="n">serverSocket</span><span class="o">.</span><span class="na">accept</span><span class="o">();</span>
+                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;一个客户端建立了连接....&quot;</span><span class="o">);</span>
+                <span class="c1">// 多线程处理</span>
+                <span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Dispatcher</span><span class="o">(</span><span class="n">client</span><span class="o">)).</span><span class="na">start</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 停止服务</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stop</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">isRunning</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">serverSocket</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;服务器已停止&quot;</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="dispatcher">Dispatcher<a class="headerlink" href="#dispatcher" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.Socket</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Dispatcher</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Socket</span> <span class="n">client</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Request</span> <span class="n">request</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Response</span> <span class="n">response</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Dispatcher</span><span class="o">(</span><span class="n">Socket</span> <span class="n">client</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">client</span> <span class="o">=</span> <span class="n">client</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">request</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Request</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+            <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Response</span><span class="o">(</span><span class="n">client</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">release</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// 释放资源</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">release</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">client</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e1</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">request</span><span class="o">.</span><span class="na">getUrl</span><span class="o">()</span> <span class="o">||</span> <span class="n">request</span><span class="o">.</span><span class="na">getUrl</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getContextClassLoader</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&quot;index.html&quot;</span><span class="o">);</span>
+                <span class="kt">int</span> <span class="n">len</span><span class="o">;</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+                <span class="k">while</span> <span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">pushToBrowser</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+                <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">Servlet</span> <span class="n">servlet</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">request</span><span class="o">.</span><span class="na">getUrl</span><span class="o">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">request</span><span class="o">.</span><span class="na">getUrl</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">))</span>
+                <span class="n">servlet</span> <span class="o">=</span> <span class="o">(</span><span class="n">Servlet</span><span class="o">)</span> <span class="n">WebApp</span><span class="o">.</span><span class="na">getServletFromUrl</span><span class="o">(</span><span class="n">request</span><span class="o">.</span><span class="na">getUrl</span><span class="o">());</span>
+            <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">servlet</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">servlet</span><span class="o">.</span><span class="na">service</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">response</span><span class="o">);</span>
+                <span class="c1">// 关注了状态码</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">pushToBrowser</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="c1">// 错误....</span>
+                <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getContextClassLoader</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&quot;error.html&quot;</span><span class="o">);</span>
+                <span class="kt">int</span> <span class="n">len</span><span class="o">;</span>
+                <span class="kt">byte</span><span class="o">[]</span> <span class="n">flush</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+                <span class="k">while</span> <span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">is</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">flush</span><span class="o">))</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">flush</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">len</span><span class="o">));</span>
+                <span class="o">}</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">pushToBrowser</span><span class="o">(</span><span class="mi">404</span><span class="o">);</span>
+                <span class="n">is</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">pushToBrowser</span><span class="o">(</span><span class="mi">500</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e1</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">release</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="webapp">WebApp<a class="headerlink" href="#webapp" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParserFactory</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebApp</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">WebContext</span> <span class="n">webContext</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// SAX 解析</span>
+            <span class="c1">// 1.获取解析工厂</span>
+            <span class="n">SAXParserFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="n">SAXParserFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="c1">// 2. 从解析工厂中获取解析器</span>
+            <span class="n">SAXParser</span> <span class="n">parse</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newSAXParser</span><span class="o">();</span>
+            <span class="c1">// 3. 加载文档 Document 注册处理器</span>
+            <span class="c1">// 4. 编辑处理器</span>
+            <span class="n">WebHandler</span> <span class="n">handler</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WebHandler</span><span class="o">();</span>
+            <span class="n">parse</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span>
+                    <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getContextClassLoader</span><span class="o">().</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&quot;web.xml&quot;</span><span class="o">),</span>
+                    <span class="n">handler</span><span class="o">);</span>
+            <span class="n">webContext</span> <span class="o">=</span> <span class="k">new</span> <span class="n">WebContext</span><span class="o">(</span><span class="n">handler</span><span class="o">.</span><span class="na">getEntities</span><span class="o">(),</span> <span class="n">handler</span><span class="o">.</span><span class="na">getMappings</span><span class="o">());</span>
+
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;解析配置文件错误&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Servlet</span> <span class="nf">getServletFromUrl</span><span class="o">(</span><span class="n">String</span> <span class="n">url</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 假设你输入了 /login</span>
+        <span class="n">String</span> <span class="n">className</span> <span class="o">=</span> <span class="n">webContext</span><span class="o">.</span><span class="na">getClz</span><span class="o">(</span><span class="s">&quot;/&quot;</span> <span class="o">+</span> <span class="n">url</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;className: &quot;</span> <span class="o">+</span> <span class="n">className</span><span class="o">);</span>
+        <span class="n">Class</span><span class="o">&lt;?&gt;</span> <span class="n">clz</span><span class="o">;</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">clz</span> <span class="o">=</span> <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="n">className</span><span class="o">);</span>
+            <span class="n">Servlet</span> <span class="n">servlet</span> <span class="o">=</span> <span class="o">(</span><span class="n">Servlet</span><span class="o">)</span> <span class="n">clz</span><span class="o">.</span><span class="na">getConstructor</span><span class="o">().</span><span class="na">newInstance</span><span class="o">();</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">servlet</span><span class="o">);</span>
+            <span class="k">return</span> <span class="n">servlet</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="webhandler">WebHandler<a class="headerlink" href="#webhandler" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.xml.sax.Attributes</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.helpers.DefaultHandler</span><span class="o">;</span>
+
+<span class="kd">class</span> <span class="nc">WebHandler</span> <span class="kd">extends</span> <span class="n">DefaultHandler</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span> <span class="n">entities</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Mapping</span><span class="o">&gt;</span> <span class="n">mappings</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Entity</span> <span class="n">entity</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Mapping</span> <span class="n">mapping</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">isMapping</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">tag</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startDocument</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SAXException</span> <span class="o">{</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="n">mappings</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startElement</span><span class="o">(</span><span class="n">String</span> <span class="n">uri</span><span class="o">,</span> <span class="n">String</span> <span class="n">localName</span><span class="o">,</span> <span class="n">String</span> <span class="n">qName</span><span class="o">,</span> <span class="n">Attributes</span> <span class="n">attributes</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">qName</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">tag</span> <span class="o">=</span> <span class="n">qName</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">entity</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entity</span><span class="o">();</span>
+                <span class="n">isMapping</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet-mapping&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">mapping</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Mapping</span><span class="o">();</span>
+                <span class="n">isMapping</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">characters</span><span class="o">(</span><span class="kt">char</span><span class="o">[]</span> <span class="n">ch</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">length</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">SAXException</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">contents</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">ch</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">length</span><span class="o">).</span><span class="na">trim</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">tag</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 处理了空</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">isMapping</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet-name&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">mapping</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="n">contents</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;url-pattern&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">mapping</span><span class="o">.</span><span class="na">addPattern</span><span class="o">(</span><span class="n">contents</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet-name&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">entity</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="n">contents</span><span class="o">);</span>
+                <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">tag</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet-class&quot;</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">entity</span><span class="o">.</span><span class="na">setClz</span><span class="o">(</span><span class="n">contents</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">endElement</span><span class="o">(</span><span class="n">String</span> <span class="n">uri</span><span class="o">,</span> <span class="n">String</span> <span class="n">localName</span><span class="o">,</span> <span class="n">String</span> <span class="n">qName</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">SAXException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="kc">null</span> <span class="o">!=</span> <span class="n">qName</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">qName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">entities</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">entity</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">qName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;servlet-mapping&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">mappings</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">mapping</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">tag</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">endDocument</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">SAXException</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;----解析文档结束----&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span> <span class="nf">getEntities</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">entities</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Mapping</span><span class="o">&gt;</span> <span class="nf">getMappings</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">mappings</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="webcontext">WebContext<a class="headerlink" href="#webcontext" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">&quot;unused&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">WebContext</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span> <span class="n">entities</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Mapping</span><span class="o">&gt;</span> <span class="n">mappings</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+
+    <span class="c1">// key--&gt;servlet-name value --&gt;servlet-class</span>
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">entityMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+    <span class="c1">// key --&gt;url-pattern value --&gt;servlet-name</span>
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">mappingMap</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;();</span>
+
+    <span class="kd">public</span> <span class="nf">WebContext</span><span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Entity</span><span class="o">&gt;</span> <span class="n">entities</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Mapping</span><span class="o">&gt;</span> <span class="n">mappings</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">entities</span> <span class="o">=</span> <span class="n">entities</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">mappings</span> <span class="o">=</span> <span class="n">mappings</span><span class="o">;</span>
+
+        <span class="k">for</span> <span class="o">(</span><span class="n">Entity</span> <span class="n">entity</span> <span class="o">:</span> <span class="n">entities</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">entityMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">entity</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">entity</span><span class="o">.</span><span class="na">getClz</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">Mapping</span> <span class="n">mapping</span> <span class="o">:</span> <span class="n">mappings</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">pattern</span> <span class="o">:</span> <span class="n">mapping</span><span class="o">.</span><span class="na">getPatterns</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">mappingMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">pattern</span><span class="o">,</span> <span class="n">mapping</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getClz</span><span class="o">(</span><span class="n">String</span> <span class="n">pattern</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">mappingMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">pattern</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">entityMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="servlet">Servlet<a class="headerlink" href="#servlet" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Servlet</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">Request</span> <span class="n">request</span><span class="o">,</span><span class="n">Response</span> <span class="n">response</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="loginservlet">LoginServlet<a class="headerlink" href="#loginservlet" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">Request</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">Response</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">Servlet</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginServlet</span> <span class="kd">implements</span> <span class="n">Servlet</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span>  <span class="nf">service</span><span class="o">(</span><span class="n">Request</span> <span class="n">request</span><span class="o">,</span><span class="n">Response</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;html&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;head&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;meta http-equiv=\&quot;content-type\&quot; content=\&quot;text/html;charset=utf-8\&quot;&gt;&quot;</span> <span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;title&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;第一个servlet&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/title&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/head&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;body&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;欢迎回来:&quot;</span><span class="o">+</span><span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&quot;uname&quot;</span><span class="o">));</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/body&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/html&gt;&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="registerservlet">RegisterServlet<a class="headerlink" href="#registerservlet" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nn">webserver.server04.user</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">Request</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">Response</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">Servlet</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RegisterServlet</span> <span class="kd">implements</span> <span class="n">Servlet</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">service</span><span class="o">(</span><span class="n">Request</span> <span class="n">request</span><span class="o">,</span> <span class="n">Response</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">uname</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">&quot;uname&quot;</span><span class="o">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">favs</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameterValues</span><span class="o">(</span><span class="s">&quot;fav&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;html&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;head&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;meta http-equiv=\&quot;content-type\&quot; content=\&quot;text/html;charset=utf-8\&quot;&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;title&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;注册成功&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/title&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/head&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;body&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;你注册的信息为:&quot;</span> <span class="o">+</span> <span class="n">uname</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;你喜欢的类型为:&quot;</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">String</span> <span class="n">v</span> <span class="o">:</span> <span class="n">favs</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;0&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;type 0&quot;</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;1&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;type 1&quot;</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&quot;2&quot;</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;type 1&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/body&gt;&quot;</span><span class="o">);</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;&lt;/html&gt;&quot;</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<h2 id="web-xml">Web xml<a class="headerlink" href="#web-xml" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+ <span class="nt">&lt;web-app&gt;</span>
+ <span class="nt">&lt;servlet&gt;</span>
+  <span class="nt">&lt;servlet-name&gt;</span>login<span class="nt">&lt;/servlet-name&gt;</span>
+  <span class="nt">&lt;servlet-class&gt;</span>webserver.server04.user.LoginServlet<span class="nt">&lt;/servlet-class&gt;</span>
+ <span class="nt">&lt;/servlet&gt;</span>
+   <span class="nt">&lt;servlet&gt;</span>
+  <span class="nt">&lt;servlet-name&gt;</span>reg<span class="nt">&lt;/servlet-name&gt;</span>
+  <span class="nt">&lt;servlet-class&gt;</span>webserver.server04.user.RegisterServlet<span class="nt">&lt;/servlet-class&gt;</span>
+ <span class="nt">&lt;/servlet&gt;</span>
+   <span class="nt">&lt;servlet&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>others<span class="nt">&lt;/servlet-name&gt;</span>
+    <span class="nt">&lt;servlet-class&gt;</span>webserver.server04.user.OtherServlet<span class="nt">&lt;/servlet-class&gt;</span>
+   <span class="nt">&lt;/servlet&gt;</span>
+   <span class="nt">&lt;servlet-mapping&gt;</span>
+  <span class="nt">&lt;servlet-name&gt;</span>login<span class="nt">&lt;/servlet-name&gt;</span>
+  <span class="nt">&lt;url-pattern&gt;</span>/login<span class="nt">&lt;/url-pattern&gt;</span>
+  <span class="nt">&lt;url-pattern&gt;</span>/g<span class="nt">&lt;/url-pattern&gt;</span>
+ <span class="nt">&lt;/servlet-mapping&gt;</span>
+ <span class="nt">&lt;servlet-mapping&gt;</span>
+  <span class="nt">&lt;servlet-name&gt;</span>reg<span class="nt">&lt;/servlet-name&gt;</span>
+  <span class="nt">&lt;url-pattern&gt;</span>/reg<span class="nt">&lt;/url-pattern&gt;</span>
+ <span class="nt">&lt;/servlet-mapping&gt;</span>
+ <span class="nt">&lt;servlet-mapping&gt;</span>
+    <span class="nt">&lt;servlet-name&gt;</span>others<span class="nt">&lt;/servlet-name&gt;</span>
+    <span class="nt">&lt;url-pattern&gt;</span>/o<span class="nt">&lt;/url-pattern&gt;&lt;/servlet-mapping&gt;</span>
+<span class="nt">&lt;/web-app&gt;</span>
+</pre></div>
+
+
+<h2 id="error">Error<a class="headerlink" href="#error" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;content-type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html;charset=utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>404页面<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>ERROR<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2 id="index">Index<a class="headerlink" href="#index" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;content-type&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;text/html;charset=utf-8&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>首页<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>welcome<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2 id="login">Login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">\&quot;content-type\&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">\&quot;text/html;charset=&quot;utf-8&quot;\&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>第一个html登录<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>表单的使用<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;get&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://localhost:8888/login&quot;</span><span class="p">&gt;</span>
+                        用户名:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;uname&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;uname&quot;</span><span class="p">/&gt;</span>
+                        密码:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;pwd&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;pwd&quot;</span><span class="p">/&gt;</span>
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;登录&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2 id="regist">Regist<a class="headerlink" href="#regist" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>注册页面<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>欢迎注册<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;http://localhost:8888/r&quot;</span><span class="p">&gt;</span>
+                        用户名:<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;uname&quot;</span>  <span class="na">id</span><span class="o">=</span><span class="s">&quot;uname&quot;</span><span class="p">/&gt;</span>
+                        你心中的女神:
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav&quot;</span>  <span class="na">value</span><span class="o">=</span><span class="s">&quot;0&quot;</span><span class="p">/&gt;</span>type1
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav&quot;</span>   <span class="na">value</span><span class="o">=</span><span class="s">&quot;1&quot;</span><span class="p">/&gt;</span>type2
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;fav&quot;</span>   <span class="na">value</span><span class="o">=</span><span class="s">&quot;2&quot;</span><span class="p">/&gt;</span>type3
+                        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;登录&quot;</span><span class="p">/&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<h2 id="authors">Authors<a class="headerlink" href="#authors" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Weiduo Sun</strong> -</li>
+</ul>
+<h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>This project is licensed under the MIT License - see the <a href="https://github.com/WeiduoS/Java/blob/master/LICENSE">LICENSE.md</a> file for details</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../../Networking/TCP/TCP/" title="3 TCP" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 TCP
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 - 2020 Weiduo Sun
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/squidfunk" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/squidfunk" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://linkedin.com/in/squidfunk" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.d9aa80ab.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+    
+  </body>
+</html>
